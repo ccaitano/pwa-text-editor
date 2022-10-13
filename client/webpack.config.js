@@ -22,13 +22,18 @@ module.exports = () => {
         template: './index.html',
         title: 'TODOs List'
       }),
-      new InjectManifest(),
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
       new WebpackPwaManifest({
         name: 'My Text Editor App',
         short_name: 'myTextEditor',
         description: 'PWA - Text Editor App',
         background_color: '#ffffff',
         crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+        start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('./src/images/logo.png'),
