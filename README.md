@@ -27,6 +27,9 @@ Option 1 - Launch from the Terminal:
 - Run `npm run start` in the terminal
 - Open `http://localhost:3000` in your browser
 
+Option 2 - Launch from Heroku
+- Deployed Application: [J.A.T.E.](https://pwa-jate-cc.herokuapp.com/)
+
 ![Screenshot of Main Editor](./assets/main-screen.JPG)
 
 ## **License**
