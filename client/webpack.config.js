@@ -20,25 +20,28 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'TODOs List'
+        title: 'JATE'
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
-        name: 'My Text Editor App',
-        short_name: 'myTextEditor',
+        fingerprints: false,
+        inject: true,
+        name: 'Just-Another-Text-Editor',
+        short_name: 'JATE',
         description: 'PWA - Text Editor App',
         background_color: '#ffffff',
-        crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+        // crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
         start_url: '/',
         publicPath: '/',
         icons: [
           {
-            src: path.resolve('./src/images/logo.png'),
-            sizes: "1024x1024",
-            type: "image/png"
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            // type: "image/png",
+            destination: path.join('assets', 'icons')
           }
         ]
       })
